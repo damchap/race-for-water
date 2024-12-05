@@ -1,8 +1,11 @@
 import React from 'react';
 import { AppBar, Container, Toolbar, Typography } from '@mui/material';
 import Navbar from '../components/Navbar';
+import { Outlet } from "react-router"
 
 const HomeLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
+    console.log('HomeLayout');
+    console.log(children);
     return (
         <div>
             <AppBar position="static">
@@ -13,7 +16,7 @@ const HomeLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
                 </Toolbar>
             </AppBar>
             <Container>
-                {children}
+                <Outlet />
             </Container>
             <Navbar />
         </div>
