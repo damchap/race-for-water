@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -5,7 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,13 +26,6 @@ a:hover {
   color: #535bf2;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
 h1 {
   font-size: 3.2em;
@@ -42,7 +39,7 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+
   cursor: pointer;
   transition: border-color 0.25s;
 }
@@ -56,7 +53,7 @@ button:focus-visible {
 
 @media (prefers-color-scheme: light) {
   :root {
-    color: #213547;
+
     background-color: #ffffff;
   }
   a:hover {
@@ -65,4 +62,20 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+.green-body {
+  margin: 0; /* Removes default body margin */
+  background-color: #00FF00; /* Bright green background */
+}
+
+.gif-border {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Height of the GIF border */
+  background: url('./assets/images/fire.gif') repeat-x; /* Repeats the GIF horizontally */
+  background-size: contain; /* Ensures the GIF retains its aspect ratio */
+  z-index: 1000; /* Ensures it is above other content */
 }
