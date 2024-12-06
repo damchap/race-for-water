@@ -5,6 +5,30 @@
 
 ### Bad UI Challenge (défi Zenika)
 
+Le but de ce défi est de réaliser une interface utilisateur la plus laide possible. Pour cela, nous avons choisi de réaliser un formulaire à l'expérience utilisateur la moins agréable possible.
+
+#### Accessibilité
+
+On peut accéder au formulaire en ajoutant `/chaos` à l'URL du site.
+
+#### Champs du formulaire
+
+- Un champ de texte pour le nom
+- Un champ de texte pour écrire l'âge : l'âge doit être écrit en toutes lettres, en français et sans faute d'orthographe
+- Un champ de texte pour le commentaire : Le commentaire doit faire 200 caractères minimum (/!\ Attention, le compteur de caractères n'est pas présent, et la case est plutôt petite, empêchant de voir le texte en entier)
+- Un choix de boutons radios pour l'**in**satisfaction : En plus d'avoir une question mal formulée, les couleurs des boutons radios sont illogiques, avec du rouge pour le choix "oui" et du vert pour le choix "non"
+- Un slider pour la note : Le slider est très précis avec des décimales. Aussi, le texte change de couleur quand on déplace le curseur, rendant la lecture difficile
+- Un champ de texte pour le prénom : Le prénom est demandé après le nom, ce qui est illogique.
+- Un captcha : Le captcha est une longue phrase, écrite à la main, impossible à copier-colle. La case est trop petite pour afficher la phrase en entier, ce qui rend la relecture difficile.
+
+#### Quelques petits détails 
+
+- Des gifs de très bon goût sont présent sur la page, sublimés par un fond vert bien saturé
+- Les champs ne sont disponibles qu'un par un
+- Le passage d'un champ à l'autre dure 2 secondes
+- Afin d'être bien sur de vouloir soumettre le formulaire, un pop-up de confirmation est affiché, qui doit lui aussi être confirmé, pour éviter les soumissions accidentelles
+- Quand le formulaire est soumis, un message de succès est affiché, mais affiché en rouge, ce qui fait penser à une erreur plutôt qu'à une réussite
+
 ### MOVAI CODE 2024 (défi Coddity)
 
 L'objectif de ce défi est de réaliser une fonctionnalité en lien avec le défi principal dont le code soit absolument honteux, aussi bien à lire que dans son exécution.
