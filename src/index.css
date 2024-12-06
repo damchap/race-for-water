@@ -63,3 +63,19 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.green-body {
+  margin: 0; /* Removes default body margin */
+  background-color: #00FF00; /* Bright green background */
+}
+
+.gif-border {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* Height of the GIF border */
+  background: url('./assets/images/fire.gif') repeat-x; /* Repeats the GIF horizontally */
+  background-size: contain; /* Ensures the GIF retains its aspect ratio */
+  z-index: 1000; /* Ensures it is above other content */
+}

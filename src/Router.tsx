@@ -3,6 +3,7 @@ import { createBrowserRouter } from "react-router";
 import HomeLayout from "./layout/HomeLayout";
 import Home from "./pages/Home";
 import StartGameLayout from "./layout/StartGameLayout";
+import Chaos from "./pages/Chaos";
 
 export const Router = () => {
     const router = createBrowserRouter([
@@ -19,6 +20,10 @@ export const Router = () => {
                     element: <Home />,
                 },
             ],
+        },
+        {
+            path : "/chaos",
+            element: <Chaos />,
         }
     ]);
 
