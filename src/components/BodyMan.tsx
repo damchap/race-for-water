@@ -1,8 +1,9 @@
+import Logo from "./logo";
 
 const BodyMan = () => {
     return (
             <div
-                className="flex w-80 p-5 flex-col items-center gap-2 rounded-2xl border-[1.4px] border-white/40 bg-[rgba(128,128,128,0.30)] bg-blend-luminosity backdrop-blur-[100px]">
+                className="flex w-80 p-5 flex-col items-center gap-2 rounded-2xl border-[1.4px] border-white/40 bg-[rgba(128,128,128,0.30)] bg-blend-luminosity backdrop-blur-[50px]">
                 <div className="flex w-[270px] px-4 py-2 flex-col items-center gap-0.5">
                     <h2 className="self-stretch text-[rgba(255,255,255,0.96)] text-center [font-feature-settings:'liga'_off,'clig'_off] font-sf-pro text-[19px] font-normal font-bold leading-[24px]">
                         Vous
@@ -11,7 +12,24 @@ const BodyMan = () => {
                         className={"text-[rgba(255,255,255,0.23)] text-center [font-feature-settings:'liga'_off,'clig'_off] font-sf-pro text-[15px] font-normal font-medium leading-[20px] self-stretch"}>
                         Description text about this alert
                     </span>
-                    <div className={"h-[60vh]"}>
+                    <div className={"relative h-[60vh]"}>
+                        {/* 4 point on body*/}
+                        <div
+                            className="absolute right-[120px] top-[60px] flex w-[29px] h-[21px] p-[5.166px] justify-center items-center gap-[4.305px] rounded-[48.915px] border-[2px] border-[rgba(255,255,255,0.40)] bg-[#69BFE8]">
+                            <Logo.Magnifer className={"w-8 h-8"}/>
+                        </div>
+                        <div
+                            className="absolute right-[80px] top-[220px] flex w-[29px] h-[21px] p-[5.166px] justify-center items-center gap-[4.305px] rounded-[48.915px] border-[2px] border-[rgba(255,255,255,0.40)] bg-[#69BFE8]">
+                            <Logo.Magnifer className={"w-8 h-8"}/>
+                        </div>
+                        <div
+                            className="absolute right-[00px] bottom-[340px] flex w-[29px] h-[21px] p-[5.166px] justify-center items-center gap-[4.305px] rounded-[48.915px] border-[2px] border-[rgba(255,255,255,0.40)] bg-[#69BFE8]">
+                            <Logo.Magnifer className={"w-8 h-8"}/>
+                        </div>
+                        <div
+                            className="absolute left-[60px] bottom-[50px] flex w-[29px] h-[21px] p-[5.166px] justify-center items-center gap-[4.305px] rounded-[48.915px] border-[2px] border-[rgba(255,255,255,0.40)] bg-[#69BFE8]">
+                            <Logo.Magnifer className={"w-8 h-8"}/>
+                        </div>
                         <svg width="100%" height="100%" viewBox="0 0 176 520" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path
