@@ -1,5 +1,5 @@
 import React from 'react';
-import fpxbmpzf from '../scripts/movai'
+import fpxbmpzf from '../scripts/movai.ts'
 
 const Home: React.FC = () => {
     return (
