@@ -1,50 +1,29 @@
-    # React + TypeScript + Vite
+# Nuit de l'Info 2024 - équipe NiortVPN
+## CHAPART Damien - MARCHESIN Lilou - SAINT-MARS Benjamin
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Race for Water (défi principal)
 
-Currently, two official plugins are available:
+### Bad UI Challenge (défi Zenika)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### MOVAI CODE 2024 (défi Coddity)
 
-## Expanding the ESLint configuration
+L'objectif de ce défi est de réaliser une fonctionnalité en lien avec le défi principal dont le code soit absolument honteux, aussi bien à lire que dans son exécution.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Nous avons choisi de proposer un téléchargement des données au format JSON que nous avons utilisé pour le défi principal, car c'est une fonctionnalité sympa mais pas essentielle et donc la cible parfaite pour nos farces.
 
-- Configure the top-level `parserOptions` property like this:
+#### Implémentation:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+Pour ce qui est de l'implémentation, nous avons choisi le langage JavaScript (le langage du démon si on me demande).
+
+Cette fonction au doux nom de `fpxbmpzf` (si si c'est logique) est donc écrite en une seule ligne (ma touche 'Entrée' était cassée 😢) qui va lire notre fichier JSON et pour chaque élément contenu dans l'array, va ensuite extraire les données et écrire une nouvelle chaîne de caractères. Pour cela, une double boucle `while` est la meilleure des pires solutions de lecture.
+
+Cependant, le résultat obtenu étant trop rapide, nous avons ajouté quelques moments de répit pour notre pauvre machine ainsi qu'une magnifique pop-up qui nous préviens du temps ~~perdu~~ passé à attendre notre téléchargement !
+
+Concernant le nom des variables, vu que le sujet du défi principal met en comparaison le corps humain avec l'Océan nous avons trouvé adapté d'utiliser des noms de Pokémons de type eau.
+
+#### Notre horreur:
+
+```typescript
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+**Amusez-vous bien !**
