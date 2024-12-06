@@ -1,24 +1,18 @@
 import React from 'react';
-import { AppBar, Container, Toolbar, Typography } from '@mui/material';
-import Navbar from '../components/Navbar';
-import { Outlet } from "react-router"
+import {Outlet} from "react-router";
+import Navbar from "../components/Navbar.tsx";
+import VideoBackground from "../components/VideoBackground.tsx";
+// import BackgrougVideo from '../assets/video/background/MovingOcean.mp4'
 
 const HomeLayout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
     console.log('HomeLayout');
     console.log(children);
     return (
         <div>
-            <AppBar position="static">
-                <Toolbar>
-                    <Typography variant="h6">
-                        Home Layout
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-            <Container>
+            <VideoBackground>
                 <Outlet />
-            </Container>
-            <Navbar />
+                <Navbar />
+            </VideoBackground>
         </div>
     );
 };

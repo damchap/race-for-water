@@ -1,39 +1,27 @@
 import React from 'react';
-import { BottomNavigation, BottomNavigationAction, Paper } from '@mui/material';
-import HomeIcon from '@mui/icons-material/Home';
-import { MdPodcasts } from "react-icons/md";
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import { styled } from '@mui/system';
-
-const StyledBottomNavigation = styled(BottomNavigation)({
-    borderRadius: '15px',
-    boxShadow: '0px 4px 20px rgba(255, 105, 180, 0.5)', // Pink box shadow
-    backgroundColor: '#fff',
-});
-
-const CenterAction = styled(BottomNavigationAction)({
-    '&.Mui-selected': {
-        transform: 'scale(1.2)',
-    },
-});
+import Logo from './logo/index.ts';
 
 const Navbar: React.FC = () => {
-    const [value, setValue] = React.useState(1);
-
     return (
-        <Paper elevation={3} sx={{ position: 'fixed', bottom: 0, left: 0, right: 0 }}>
-            <StyledBottomNavigation
-                showLabels
-                value={value}
-                onChange={(event, newValue) => {
-                    setValue(newValue);
-                }}
-            >
-                <BottomNavigationAction label="Podcast" icon={<MdPodcasts />} />
-                <CenterAction label="Home" icon={<HomeIcon />} />
-                <BottomNavigationAction label="Admin" icon={<AdminPanelSettingsIcon />} />
-            </StyledBottomNavigation>
-        </Paper>
+        <div className="fixed bottom-2 md:bottom-10 flex w-full px-9 flex-col items-center justify-center gap-2">
+            <div className="inline-flex px-5 py-0.5 justify-center self-center items-center gap-2 rounded-full border-4 border-white/40 bg-gray-500/17 shadow-[0px_0px_41.3px_13.168px_rgba(0,0,0,0.45)] backdrop-blur-[50px]">
+                <div className="flex p-2.5 justify-center items-center gap-2.5">
+                    <Logo.Magnifer className={"w-8 h-8"}/>
+                </div>
+                <div className="flex p-2.5 justify-center items-center gap-2.5">
+                    <Logo.Earth className={"w-8 h-8"}/>
+                </div>
+                <div className="flex p-0.5 justify-center items-center rounded-full border-4 border-white/40 bg-[#69BFE8]">
+                    <Logo.Home className="flex w-16 h-16 p-1 justify-center items-center flex-shrink-0" />
+                </div>
+                <div className="flex p-2.5 justify-center items-center gap-2.5">
+                    <Logo.TeaCup className={"w-8 h-8"}/>
+                </div>
+                <div className="flex p-2.5 justify-center items-center gap-2.5">
+                    <Logo.Setting className={"w-8 h-8"}/>
+                </div>
+            </div>
+        </div>
     );
 };
 
