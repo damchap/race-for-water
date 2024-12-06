@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BodyMan from "../components/BodyMan.tsx";
+import DateContainer from '../components/DateContainer.tsx';
 
 interface PartiDuCorp {
     id: number;
@@ -100,15 +101,16 @@ const Home: React.FC = () => {
     ];
     return (
         <main
-            className="mx-auto max-w-5xl px-4 xl:max-w-7xl xl:px-0 flex flex-col  mt-2 md:mt-10 ">
-            <section className="flex flex-row justify-center items-center gap-8">
-            <BodyMan partiDuCorps={partiDuCorpsData} onSelectPartiDuCorps={setSelectedPartiDuCorps}/>
-            </section>
-            {selectedPartiDuCorps && (
-            <div className="fixed top-0 m-0 p-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 backdrop-blur-[10px]">
-                <div className="bg-[rgba(128,128,128,0.30)] bg-blend-luminosity p-4 rounded-2xl shadow-lg backdrop-blur-[50px]">
-                    <div className="flex w-[270px] px-4 py-2 flex-col items-center gap-0.5">
-                    <h1 className="text-2xl font-bold text-white">{selectedPartiDuCorps.titre}</h1>
+        className="mx-auto max-w-5xl px-4 xl:max-w-7xl xl:px-0 flex flex-col  mt-2 md:mt-10 ">
+        <section className="flex flex-row justify-center items-center gap-8">
+        <BodyMan partiDuCorps={partiDuCorpsData} onSelectPartiDuCorps={setSelectedPartiDuCorps}/>
+        <DateContainer partiDuCorp={selectedPartiDuCorps} />
+        </section>
+        {selectedPartiDuCorps && (
+        <div className="fixed md:hidden top-0 m-0 p-0 inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 backdrop-blur-[10px]">
+            <div className="bg-[rgba(128,128,128,0.30)] bg-blend-luminosity p-4 rounded-2xl shadow-lg backdrop-blur-[50px]">
+                <div className="flex w-[270px] px-4 py-2 flex-col items-center gap-0.5">
+                <h1 className="text-2xl font-bold text-white">{selectedPartiDuCorps.titre}</h1>
                     <p className="text-sm text-white">{selectedPartiDuCorps.description}</p>
                     <button onClick={() => setSelectedPartiDuCorps(null)} className="mt-4 px-4 py-2 bg-[#69BFE8] text-white rounded">
                         Close

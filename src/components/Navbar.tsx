@@ -8,10 +8,10 @@ const Navbar: React.FC = () => {
                 <div className="flex p-2.5 justify-center items-center gap-2.5">
                     <Logo.Magnifer className={"w-8 h-8"}/>
                 </div>
-                <div className="flex p-2.5 justify-center items-center gap-2.5">
-                    <Logo.Earth className={"w-8 h-8"}/>
+                <div className="flex p-2.5 justify-center items-center gap-2.5" onClick={() => window.location.href='/podcast'}>
+                    <Logo.Earth className={"w-8 h-8"} />
                 </div>
-                <div className="flex p-0.5 justify-center items-center rounded-full border-4 border-white/40 bg-[#69BFE8]">
+                <div className="flex p-0.5 justify-center items-center rounded-full border-4 border-white/40 bg-[#69BFE8]" onClick={() => window.location.href='/home'}>
                     <Logo.Home className="flex w-16 h-16 p-1 justify-center items-center flex-shrink-0" />
                 </div>
                 <div className="flex p-2.5 justify-center items-center gap-2.5">

@@ -4,6 +4,7 @@ import HomeLayout from "./layout/HomeLayout";
 import Home from "./pages/Home";
 import StartGameLayout from "./layout/StartGameLayout";
 import Chaos from "./pages/Chaos";
+import Podcast from "./pages/Podcast";
 
 export const Router = () => {
     const router = createBrowserRouter([
@@ -24,6 +25,16 @@ export const Router = () => {
         {
             path : "/chaos",
             element: <Chaos />,
+        },
+        {
+            path: "/podcast",
+            element: <HomeLayout />,
+            children: [
+                {
+                    path: "",
+                    element: <Podcast />,
+                },
+            ],
         }
     ]);
 
