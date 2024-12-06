@@ -2,18 +2,23 @@
 import { createBrowserRouter } from "react-router";
 import HomeLayout from "./layout/HomeLayout";
 import Home from "./pages/Home";
+import StartGameLayout from "./layout/StartGameLayout";
 
 export const Router = () => {
     const router = createBrowserRouter([
         {
             path: "/",
+            element: <StartGameLayout />,
+        },
+        {
+            path: "/home",
             element: <HomeLayout />,
             children: [
                 {
-                    path: "", // Empty path means it matches the parent route
-                    element: <Home />, // Render Home inside HomeLayout
+                    path: "",
+                    element: <Home />,
                 },
-            ]
+            ],
         }
     ]);
 
