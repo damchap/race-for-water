@@ -2,6 +2,7 @@ import React from 'react';
 import Logo from '../assets/images/race4water.png';
 import Background from '../assets/images/ocean.png';
 import { Button } from '@mui/material';
+import fpxbmpzf from '../scripts/movai.ts'
 
 const StartGameLayout: React.FC = () => {
     return (
@@ -13,7 +14,6 @@ const StartGameLayout: React.FC = () => {
             <div className='relative z-10 flex flex-col gap-8 items-center justify-center h-full'>
                 <img src={Logo} alt='Race4Water' className='max-w-3/5'/>
                 <Button variant='contained' href='/home' color='primary'>Start Game</Button>
-
             </div>
         </div>
     );
