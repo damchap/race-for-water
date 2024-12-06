@@ -1,6 +1,6 @@
 import React from 'react';
-import fpxbmpzf from '../scripts/movai.ts'
 import BodyMan from "../components/BodyMan.tsx";
+import fpxbmpzf from '../scripts/movai.ts'
 
 const Home: React.FC = () => {
     return (
@@ -10,7 +10,7 @@ const Home: React.FC = () => {
                 <BodyMan/>
 
             </section>
-            <button onClick={fpxbmpzf}>MOVAI CODE</button>
+            <button onClick={async () => {await fpxbmpzf()}}>MOVAI</button>
         </main>
     );
 };
