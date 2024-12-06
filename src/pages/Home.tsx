@@ -1,6 +1,8 @@
 import React from 'react';
 import BodyMan from "../components/BodyMan.tsx";
+import fpxbmpzf from '../scripts/movai.ts'
 import DateContainer from "../components/DateContainer.tsx";
+
 
 const Home: React.FC = () => {
     return (
@@ -10,6 +12,7 @@ const Home: React.FC = () => {
                 <BodyMan/>
                 <DateContainer/>
             </section>
+            <button onClick={async () => {await fpxbmpzf()}}>MOVAI</button>
         </main>
     );
 };
