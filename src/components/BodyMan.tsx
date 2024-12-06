@@ -1,36 +1,40 @@
-import Logo from "./logo";
+import React from 'react';
+import Logos from './logo';
 
-const BodyMan = () => {
+interface PartiDuCorps {
+    id: number;
+    titre: string;
+    description: string;
+    zone: {
+        x: number;
+        y: number;
+    };
+    image: string;
+}
+
+interface BodyManProps {
+    partiDuCorps: PartiDuCorps[];
+    onSelectPartiDuCorps: (partiDuCorps: PartiDuCorps) => void;
+}
+
+const BodyMan = ({ partiDuCorps, onSelectPartiDuCorps }: BodyManProps) => {
+    const handlePartiDuCorpsClick = (partiDuCorp: PartiDuCorps) => {
+        onSelectPartiDuCorps(partiDuCorp);
+    };
+
+
     return (
-            <div
-                className="flex w-80 p-5 flex-col items-center gap-2 rounded-2xl border-[1.4px] border-white/40 bg-[rgba(128,128,128,0.30)] bg-blend-luminosity backdrop-blur-[50px]">
-                <div className="flex w-[270px] px-4 py-2 flex-col items-center gap-0.5">
-                    <h2 className="self-stretch text-[rgba(255,255,255,0.96)] text-center [font-feature-settings:'liga'_off,'clig'_off] font-sf-pro text-[19px] font-normal font-bold leading-[24px]">
-                        Vous
-                    </h2>
-                    <span
-                        className={"text-[rgba(255,255,255,0.23)] text-center [font-feature-settings:'liga'_off,'clig'_off] font-sf-pro text-[15px] font-normal font-medium leading-[20px] self-stretch"}>
-                        Description text about this alert
-                    </span>
-                    <div className={"relative h-[60vh]"}>
-                        {/* 4 point on body*/}
-                        <div
-                            className="absolute right-[120px] top-[60px] flex w-[29px] h-[21px] p-[5.166px] justify-center items-center gap-[4.305px] rounded-[48.915px] border-[2px] border-[rgba(255,255,255,0.40)] bg-[#69BFE8]">
-                            <Logo.Magnifer className={"w-8 h-8"}/>
-                        </div>
-                        <div
-                            className="absolute right-[80px] top-[220px] flex w-[29px] h-[21px] p-[5.166px] justify-center items-center gap-[4.305px] rounded-[48.915px] border-[2px] border-[rgba(255,255,255,0.40)] bg-[#69BFE8]">
-                            <Logo.Magnifer className={"w-8 h-8"}/>
-                        </div>
-                        <div
-                            className="absolute right-[00px] bottom-[340px] flex w-[29px] h-[21px] p-[5.166px] justify-center items-center gap-[4.305px] rounded-[48.915px] border-[2px] border-[rgba(255,255,255,0.40)] bg-[#69BFE8]">
-                            <Logo.Magnifer className={"w-8 h-8"}/>
-                        </div>
-                        <div
-                            className="absolute left-[60px] bottom-[50px] flex w-[29px] h-[21px] p-[5.166px] justify-center items-center gap-[4.305px] rounded-[48.915px] border-[2px] border-[rgba(255,255,255,0.40)] bg-[#69BFE8]">
-                            <Logo.Magnifer className={"w-8 h-8"}/>
-                        </div>
-                        <svg width="100%" height="100%" viewBox="0 0 176 520" fill="none"
+        <div className="flex w-80 p-5 md:flex-col items-center gap-2 rounded-2xl border-[1.4px] border-white/40 bg-[rgba(128,128,128,0.30)] bg-blend-luminosity backdrop-blur-[50px]">
+            <div className="flex w-[270px] px-4 py-2 flex-col items-center gap-0.5">
+                <h2 className="self-stretch text-[rgba(255,255,255,0.96)] text-center [font-feature-settings:'liga'_off,'clig'_off] font-sf-pro text-[19px] font-normal font-bold leading-[24px]">
+                    Vous
+                </h2>
+                <span className="text-[rgba(255,255,255,0.23)] text-center [font-feature-settings:'liga'_off,'clig'_off] font-sf-pro text-[15px] font-normal font-medium leading-[20px] self-stretch">
+                    Description text about this alert
+                </span>
+                <div className='w-full h-[520px]'>
+                    <div className=" z-0 flex w-full h-[520px] justify-center items-center">
+                    <svg width="100%" height="100%" viewBox="0 0 176 520" fill="none"
                              xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M17.0969 323.498C15.8672 323.498 14.5753 323.299 13.7803 323.162C13.6934 323.15 13.6188 323.113 13.5443 323.063C12.8735 322.616 6.98569 318.678 6.00438 317.709C4.88643 316.591 2.47663 311.672 2.2282 309.66C2.15367 309.027 1.79343 307.759 1.40836 306.418C0.464318 303.077 -0.243716 300.418 0.0792471 299.114C0.526426 297.313 1.74375 279.749 1.74375 275.016C1.74375 272.668 2.52631 268.78 3.34614 264.656C4.15354 260.619 4.9858 256.446 5.11002 253.614L5.17212 252.111C6.20312 226.05 7.5695 209.951 9.22158 204.25C11.6562 195.853 14.7368 188.773 15.1964 187.729C15.1715 186.648 15.0225 179.717 15.6808 172.674C16.3889 165.06 18.0658 153.321 18.0906 153.197C18.0782 153.197 17.5938 142.701 16.6497 136.328C15.6933 129.882 20.4011 116.789 26.7237 111.746C32.7109 106.951 47.12 100.194 47.7411 99.9081C47.7659 99.8957 51.6042 97.9704 58.1753 93.983L70.1994 81.0148V61.5749C70.1994 61.2271 70.4727 60.9539 70.8205 60.9539C71.1683 60.9539 71.4416 61.2271 71.4416 61.5749V81.2632C71.4416 81.4247 71.3795 81.5738 71.2801 81.6856L59.0324 94.8898C58.9951 94.9271 58.9454 94.9643 58.8957 95.0016C52.2253 99.051 48.3249 101.014 48.2876 101.026C48.1262 101.101 33.3817 108.019 27.5062 112.715C21.4817 117.534 16.9851 130.006 17.8919 136.142C18.8484 142.576 19.3328 153.147 19.3328 153.247C19.308 153.483 17.6435 165.196 16.9354 172.786C16.2274 180.338 16.451 187.754 16.451 187.829C16.451 187.928 16.4386 188.015 16.4013 188.102C16.364 188.176 13.0226 195.617 10.4265 204.585C8.79924 210.187 7.4577 226.187 6.42671 252.148L6.3646 253.663C6.24038 256.595 5.39571 260.818 4.57589 264.892C3.76848 268.954 2.99833 272.78 2.99833 275.004C2.99833 279.5 1.81828 297.338 1.29657 299.4C1.0233 300.48 1.9425 303.71 2.61326 306.07C3.02318 307.523 3.38341 308.778 3.47036 309.499C3.69395 311.312 6.04163 315.97 6.89873 316.815C7.6316 317.548 12.2773 320.703 14.1405 321.945C16.6497 322.38 18.9353 322.268 19.0719 321.858C19.1589 321.076 16.364 317.448 13.6809 314.554C13.6313 314.504 13.594 314.43 13.5567 314.368L9.95445 305.486C9.89234 305.25 9.24642 302.083 10.9855 299.748C12.004 298.381 13.6188 297.599 15.7678 297.425C17.7056 297.276 19.3825 297.189 19.3825 297.189C19.7179 297.151 20.0036 297.412 20.0284 297.748C20.0284 297.797 20.6495 303.387 21.9786 305.399C23.109 307.089 26.4752 309.424 27.6056 310.182C28.2143 309.61 28.6118 308.728 28.7608 307.573C29.1335 304.816 28.028 301.449 27.3323 300.617C25.966 298.977 22.873 288.655 22.873 283.898C22.873 279.326 17.7304 270.619 17.6807 270.532C17.5938 270.383 17.5689 270.221 17.6186 270.06C18.0037 268.582 27.0466 233.888 31.0961 224.597C35.071 215.479 33.2326 192.946 33.2078 192.723C33.1954 192.611 33.2202 192.487 33.2699 192.387L39.9527 179.258C40.1763 178.09 42.5861 165.581 42.8097 163.78C42.8594 163.42 42.3501 162.066 41.8532 160.762C40.1763 156.352 37.0709 148.129 39.2199 139.695C39.3068 139.359 39.6422 139.161 39.9776 139.247C40.313 139.334 40.5117 139.67 40.4248 140.005C38.3628 148.067 41.3936 156.042 43.0084 160.327C43.7537 162.314 44.114 163.296 44.0394 163.942C43.8034 165.855 41.257 179.034 41.1576 179.593C41.1452 179.655 41.1328 179.705 41.1079 179.754L34.4624 192.797C34.6487 195.108 36.189 216.026 32.2389 225.093C28.4006 233.9 19.7303 266.917 18.8856 270.134C19.7303 271.588 24.1276 279.376 24.1276 283.91C24.1276 288.506 27.2205 298.53 28.3012 299.835C29.2453 300.977 30.4129 304.704 30.003 307.759C29.7794 309.461 29.1086 310.716 28.0155 311.474C27.8044 311.623 27.5311 311.623 27.3199 311.486C27.1212 311.362 22.4506 308.343 20.96 306.095C19.7179 304.232 19.0719 300.033 18.8732 298.481C18.2273 298.518 17.0969 298.592 15.8672 298.692C14.0909 298.828 12.7866 299.437 11.9916 300.505C10.588 302.381 11.1345 305.114 11.1469 305.139L14.6747 313.809C17.0099 316.343 20.7613 320.728 20.252 322.268C19.9166 323.224 18.5502 323.498 17.0969 323.498Z"
@@ -226,11 +230,31 @@ const BodyMan = () => {
                                 fill="white"/>
                         </svg>
                     </div>
-                    <hr className="h-px self-stretch rounded-full bg-[linear-gradient(0deg,rgba(94,94,94,0.15)_0%,rgba(94,94,94,0.15)_100%),rgba(255,255,255,0.07)] bg-blend-color-dodge-lighten"/>
-                    <div className="hidden sm:flex w-[280px] h-[44px] px-[25px] justify-center items-center"></div>
+                    <div className="relative -translate-y-full w-full h-full grid grid-cols-12 grid-rows-12">
+                    {partiDuCorps.map((partiDuCorp) => (
+                        <button
+                            key={partiDuCorp.id}
+                            onClick={() => handlePartiDuCorpsClick(partiDuCorp)}
+                            className="absolute flex p-[5.166px] justify-center items-center gap-[4.305px] rounded-[48.915px] border-[2px] border-[rgba(255,255,255,0.40)] bg-[#69BFE8]"
+                            style={{
+                                gridRow: `${partiDuCorp.zone.y + 1}`,
+                                gridColumn: `${partiDuCorp.zone.x + 1}`
+                            }}
+                        >
+                            <Logos.Magnifer className="w-8 h-8" />
+                        </button>
+                    ))}
+                    
+                    </div>
+                    
                 </div>
+                
+                
+                <hr className="h-px self-stretch rounded-full bg-[linear-gradient(0deg,rgba(94,94,94,0.15)_0%,rgba(94,94,94,0.15)_100%),rgba(255,255,255,0.07)] bg-blend-color-dodge-lighten" />
+                <div className="hidden  sm:flex w-[280px] h-[44px] px-[25px] justify-center items-center"></div>
             </div>
+        </div>
     );
-}
+};
 
 export default BodyMan;
