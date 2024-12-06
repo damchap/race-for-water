@@ -1,4 +1,3 @@
-import React from 'react';
 import Logos from './logo';
 
 interface PartiDuCorps {

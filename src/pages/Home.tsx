@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import BodyMan from "../components/BodyMan.tsx";
-import DateContainer from "../components/DateContainer.tsx";
 
 interface PartiDuCorp {
     id: number;
