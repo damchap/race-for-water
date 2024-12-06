@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Slider, Box } from '@mui/material';
 
 const NoteField = ({
@@ -26,7 +26,7 @@ const NoteField = ({
     onValidityChange(isValid);
   }, [sliderValue]);
 
-  const handleChange = (event: Event, newValue: number | number[]) => {
+  const handleChange = (_event: Event, newValue: number | number[]) => {
     if (typeof newValue === 'number') {
       const preciseValue = parseFloat(newValue.toFixed(2));
       setSliderValue(preciseValue);

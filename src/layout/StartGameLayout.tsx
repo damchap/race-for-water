@@ -2,7 +2,6 @@ import React from 'react';
 import Logo from '../assets/images/race4water.png';
 import Background from '../assets/images/ocean.png';
 import { Button } from '@mui/material';
-import fpxbmpzf from '../scripts/movai.ts'
 
 const StartGameLayout: React.FC = () => {
     return (
